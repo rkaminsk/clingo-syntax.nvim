@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 parser_configs.clingo = {
 	install_info = {
-		url = "https://github.com/potassco/tree-sitter-clingo",
+		url = "https://github.com/rkaminsk/tree-sitter-clingo",
 		files = { "src/parser.c" },
 		branch = "main",
 		generate_requires_npm = false,

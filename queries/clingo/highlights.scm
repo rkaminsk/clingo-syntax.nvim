@@ -1,6 +1,6 @@
 ; comments
-(single_comment) @comment
-(multi_comment) @comment
+(line_comment) @comment
+(block_comment) @comment
 
 ; identifiers
 (VARIABLE) @parameter
@@ -16,7 +16,7 @@
 (statement (DEFINED) @preproc)
 
 ; delimiters
-(cmp) @delimiter
+(relation) @delimiter
 (IF) @delimiter
 (WIF) @delimiter
 (SEM) @delimiter
@@ -48,7 +48,7 @@
 (EQ) @operator
 
 ; atoms and some terms
-(atom (identifier) @function)
+(symbolic_atom (identifier) @function)
 (term (identifier) @constant) 
 (term (AT) (identifier)) @function.builtin
 
@@ -56,13 +56,13 @@
 ; ...
 
 ; keywords
-(aggregatefunction) @keyword
+(aggregate_function) @keyword
 (theory_atom
     (AND)@keyword
     (theory_atom_name
     (identifier) @keyword))
-(literal (TRUE) @keyword)
-(literal (FALSE) @keyword)
+(boolean_constant (TRUE) @keyword)
+(boolean_constant (FALSE) @keyword)
 (statement (SHOW) @keyword)
 (statement (EXTERNAL) @keyword)
 (statement (MINIMIZE) @keyword)
