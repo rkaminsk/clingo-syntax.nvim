@@ -3,68 +3,49 @@
 (block_comment) @comment
 
 ; identifiers
-(VARIABLE) @parameter
 (identifier) @identifier
 
 ; constants
-(NUMBER) @number
-(STRING) @string
+(number) @number
+(string) @string
+(supremum) @constant
+(infimum) @constant
+
+; terms
+(variable) @parameter
+(anonymous) @parameter
 
 ; meta directives
-(statement (INCLUDE) @include)
-(statement (CONST) @define)
-(statement (DEFINED) @preproc)
+["#include"] @include
+["#const"] @define
+["#defined" ] @preproc
+(show "#show" @preproc)
+(show_signature "#show" @preproc)
+(project_signature "#project" @preproc)
+["#script" "#end"] @preproc
 
 ; delimiters
-(relation) @delimiter
-(IF) @delimiter
-(WIF) @delimiter
-(SEM) @delimiter
-(COMMA) @delimiter
-(DOT) @delimiter
-(AT) @delimiter
-(COLON) @delimiter
+[":-" ":~" ";" "," "." "@" ":"] @delimiter
 
 ; punctuation
-(LPAREN) @punctuation.bracket
-(RPAREN) @punctuation.bracket
-(LBRACE) @punctuation.bracket
-(RBRACE) @punctuation.bracket
-(LBRACK) @punctuation.bracket
-(RBRACK) @punctuation.bracket
+["(" ")" "{" "}" "[" "}"] @punctuation.bracket
 
 ; operators
-(ADD) @operator
-(SLASH) @operator
-(SUB) @operator
-(MUL) @operator
-(MOD) @operator
-(POW) @operator
-(DOTS) @operator
-(QUESTION) @operator
-(BNOT) @operator
-(AND) @operator
-(NOT) @operator
-(EQ) @operator
+(relation) @operator
+["+" "/" "-" "*" "\\" "**" ".." "?" "~" "&" "not" "=" (operator)] @operator
 
 ; atoms and some terms
 (symbolic_atom (identifier) @function)
-(term (identifier) @constant) 
-(term (AT) (identifier)) @function.builtin
-
-; theory terms
-; ...
+(symbolic_atom (negative_identifier) @function)
+(function (identifier) @constant) 
+(external_function ["@"] @function.builtin (identifier) @function.builtin)
 
 ; keywords
 (aggregate_function) @keyword
 (theory_atom
-    (AND)@keyword
-    (theory_atom_name
-    (identifier) @keyword))
-(boolean_constant (TRUE) @keyword)
-(boolean_constant (FALSE) @keyword)
-(statement (SHOW) @keyword)
-(statement (EXTERNAL) @keyword)
-(statement (MINIMIZE) @keyword)
-(statement (MAXIMIZE) @keyword)
-(statement (PROJECT) @keyword)
+    ["&"]@keyword
+    (theory_atom_name)@keyword)
+["#true" "#false" "#external" "#minimize" "#minimise" "#maximize" "#maximise"] @keyword
+(show_term "#show" @keyword)
+(project_atom "#project" @keyword)
+
