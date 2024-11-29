@@ -11,7 +11,7 @@ parser_configs.clingo = {
 	install_info = {
 		url = "https://github.com/rkaminsk/tree-sitter-clingo",
 		files = { "src/parser.c" },
-		branch = "main",
+		branch = "refactor",
 		generate_requires_npm = false,
 		requires_generate_from_grammar = false,
 	},
