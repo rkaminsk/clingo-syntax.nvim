@@ -19,6 +19,7 @@
 ["#include"] @include
 ["#const"] @define
 ["#defined" ] @preproc
+["#theory" ] @preproc
 (show "#show" @preproc)
 (show_signature "#show" @preproc)
 (project_signature "#project" @preproc)
@@ -42,6 +43,9 @@
 
 ; keywords
 (aggregate_function) @keyword
+(theory_atom_definition
+    ["&"]@keyword
+    name: (_)@keyword)
 (theory_atom
     ["&"]@keyword
     (theory_atom_name)@keyword)
