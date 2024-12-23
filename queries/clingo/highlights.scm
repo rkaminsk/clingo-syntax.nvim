@@ -49,7 +49,7 @@
 (theory_atom
     ["&"]@keyword
     (theory_atom_name)@keyword)
-["#true" "#false" "#external" "#minimize" "#minimise" "#maximize" "#maximise"] @keyword
+["#true" "#false" "#external" "#minimize" "#minimise" "#maximize" "#maximise" "#edge"] @keyword
 (show_term "#show" @keyword)
 (project_atom "#project" @keyword)
 
