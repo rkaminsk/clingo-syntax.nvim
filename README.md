@@ -2,9 +2,6 @@
 
 Syntax highlighting for clingo code in neovim using treesitter.
 
-Note that this repository is work in progress. Only very basic functionality is
-provided.
-
 ## Dependencies
 
 - nvim-treesitter
@@ -29,5 +26,5 @@ return  {
 ## TODO
 
 - implement identation based on treesitter grammar
-- add more queries
-- refactor treesitter grammar
+  - help here would be appreciated
+    because I don't understand how indentation is supposed to work
