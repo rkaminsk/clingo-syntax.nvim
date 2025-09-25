@@ -1,19 +1,6 @@
-local parser_configs = require("nvim-treesitter.parsers")
-
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.lp",
 	callback = function()
 		vim.bo.filetype = "clingo"
 	end,
 })
-
-parser_configs.clingo = {
-	install_info = {
-		url = "https://github.com/potassco/tree-sitter-clingo",
-		files = { "src/parser.c" },
-		branch = "refactor",
-		generate_requires_npm = false,
-		requires_generate_from_grammar = false,
-	},
-	filetype = "clingo",
-}
