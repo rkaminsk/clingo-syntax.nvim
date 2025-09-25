@@ -1,4 +1,4 @@
-local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+local parser_configs = require("nvim-treesitter.parsers")
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.lp",
