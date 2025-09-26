@@ -1,6 +1,17 @@
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "*.lp",
+vim.filetype.add({
+	extension = {
+		lp = "clingo",
+	},
+})
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
 	callback = function()
-		vim.bo.filetype = "clingo"
+		require("nvim-treesitter.parsers").clingo = {
+			install_info = {
+				url = "https://github.com/potassco/tree-sitter-clingo",
+				queries = "queries",
+			},
+		}
 	end,
 })
