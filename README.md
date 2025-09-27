@@ -18,11 +18,10 @@ return  {
 }
 ```
 
+To update the parser run:
+
 ```vim
-" update clingo parser from git and install
 TSUpdate clingo
-" install clingo parser
-TSInstall clingo
 ```
 
 ## TODO
