@@ -23,9 +23,3 @@ To update the parser run:
 ```vim
 TSUpdate clingo
 ```
-
-## TODO
-
-- implement identation based on treesitter grammar
-  - I don't understand how indentation queries are supposed to work
-  - help here would be appreciated
